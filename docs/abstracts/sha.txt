@@ -1,0 +1,11 @@
+submitted to sha2017:
+	Title: Automotive microcontrollers. Safety != Security
+	Speakers: Nils Wierma; Ramiro Pareja
+	Abstract/short introduction:
+	Tesla Model S, Jeep Cherokee, Mitsubishi Outlander, Nissan Leaf… The list of hacked cars grows every day and security has become a priority in the automotive industry. 
+	Until now, most of the security research and security development has been focusing in the higher layers of the software and in car interfaces like the WiFi, Bluetooth, USB or CAN. We, however, tried to assess security at lowest level possible: the microcontrollers in the ECUs.
+	Description:
+	New functionalities implemented in modern cars requires zero fault tolerance in the electric systems. A fail in the autopilot module, for example, can have fatal consequences. The ISO 26262 introduced in 2011 the ASIL (Automotive Safety Integrity Level) scheme, a risk classification system for functional safety. ASIL-D certified systems - the highest level of assurance - relies mostly in microcontrollers with redundant CPUs operating in a lockstep configuration. Although the ASIL-D requirements do not mention anything about security, is commonly thought that the lockstep configuration would prevent low-level attacks like fault injection (FI). We analyzed few examples of ASIL-D chips from different vendors and we found that the lockstep does not prevent fault injection. Moreover, we are able to apply FI to unlock the JTAG protection of an ASIL-D chip.
+
+	Notes for the submission reviewers:
+	We will inform the manufacturers in private, but we are not going to disclose names or models of the affected chips during the presentation. We hope this does not affect the eligibility of our submission.

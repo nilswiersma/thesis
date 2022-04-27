@@ -1,0 +1,113 @@
+% \documentclass[a4paper, 10pt]{IEEEtran}
+\documentclass[a4paper, 10pt]{article}
+
+  \PassOptionsToPackage{hyphens}{url}\usepackage[colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+  \usepackage[colorinlistoftodos]{todonotes}
+  \usepackage[english]{babel}
+  % \usepackage[margin=1in]{geometry}
+  \usepackage[utf8]{inputenc}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{booktabs}
+  \usepackage{tablefootnote}
+  \usepackage{multirow}
+  \usepackage{color}
+  \usepackage{enumitem}
+  \usepackage{float}
+  \usepackage{listings}
+  \usepackage{palatino}
+  \usepackage{siunitx}
+  % \usepackage{subfig}
+  \usepackage{colortbl}
+  \usepackage{pdfpages}
+  \usepackage{textcomp}
+  \usepackage{xspace}
+  \usepackage{csquotes}
+  \usepackage{siunitx}
+  \usepackage{appendix}
+
+  \usepackage{graphicx}
+  \usepackage{subfigure}
+
+  \usepackage{blindtext}
+  % \usepackage{titlesec}
+  % \usepackage[xindy]{glossaries}
+  % \usepackage[normalem]{ulem}
+
+  \usepackage{import}
+  \graphicspath{{pics/}{../pics/}}
+
+
+  \setlist{noitemsep}
+
+  \setcounter{secnumdepth}{5}
+  \setcounter{tocdepth}{5}
+
+  \bibliographystyle{abbrv}
+
+  \definecolor{mygray}{rgb}{0.9,0.9,0.9}
+  \lstset{
+      basicstyle=\ttfamily\footnotesize,
+      tabsize=2,
+      % backgroundcolor=\color{mygray},
+      % numbers=left
+  }
+
+  % %% disable figures
+  % \usepackage{comment}
+  % \excludecomment{figure}
+  % \let\endfigure\relax
+  % %% disable figuress
+
+  \newcommand{\TI}{ASILD1 (TI TMS570)\xspace}
+  \newcommand{\ST}{ASILD2 (ST SPC570)\xspace}
+  \newcommand{\NXP}{QM1 (NXP LPC11)\xspace}
+
+  \newcommand{\unroll}{\texttt{unroll}\xspace}
+  \newcommand{\auth}{\texttt{auth}\xspace}
+  \newcommand{\jtag}{\texttt{jtag}\xspace}
+
+  % autoref fixes
+  \newcommand*{\Appendixautorefname}{appendix}
+  \newcommand{\subfigureautorefname}{\figureautorefname}
+
+  %keyword command
+  \providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1}
+
+  \title{SAFETY $\neq$ SECURITY \\ A SECURITY EVALUATION OF STATE OF THE ART AUTOMOTIVE MICROCONTROLLERS}
+  \author{}
+  \date{}
+
+  \begin{document}
+  \maketitle
+
+  
+  \subsection{Glitching setups}
+
+  \subsubsection{Power}
+
+    \begin{figure}[H]
+        \centering
+        \def\svgwidth{\columnwidth}
+        \input{../pics/FIdiagram-power.pdf_tex}
+        \caption{Typical hardware setup}
+        \label{fig:fidiagram}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \def\svgwidth{\columnwidth}
+        \input{../pics/FIdiagram-EM.pdf_tex}
+        \caption{Typical hardware setup}
+        \label{fig:fidiagram}
+    \end{figure}
+        \begin{figure}[H]
+        \centering
+        \def\svgwidth{\columnwidth}
+        \input{../pics/FIdiagram-icWaves.pdf_tex}
+        \caption{Typical hardware setup}
+        \label{fig:fidiagram}
+    \end{figure}
+
+  \subsubsection{EM}
+
+\end{document}

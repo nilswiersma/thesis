@@ -1,0 +1,467 @@
+\documentclass[10pt]{article}
+
+% packages
+  \PassOptionsToPackage{hyphens}{url}\usepackage[colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+  \usepackage[all]{hypcap}
+
+  % \usepackage[colorinlistoftodos]{todonotes}
+  \usepackage[english]{babel}
+  % \usepackage[margin=1in]{geometry}
+  \usepackage[utf8]{inputenc}
+
+  \usepackage{titling}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{upgreek}
+
+  \usepackage{booktabs}
+  \usepackage{tablefootnote}
+  \usepackage{multirow}
+  \usepackage{color}
+  
+  \usepackage{enumitem}
+  \usepackage{float}
+  \usepackage{listings}
+
+  \usepackage{palatino}
+  \usepackage[T1]{fontenc}
+
+  \usepackage{calc}
+
+  \usepackage{siunitx}
+
+  % \usepackage{subfig}
+
+  \usepackage{colortbl}
+  \usepackage{pdfpages}
+  \usepackage{textcomp}
+  \usepackage{xspace}
+  \usepackage{csquotes}
+  \usepackage{siunitx}
+  \usepackage{appendix}
+
+  \usepackage{graphicx}
+  \usepackage{subfigure}
+
+  \usepackage{adjustbox}
+  \usepackage{changepage}
+  \usepackage[pass]{geometry}
+
+  \usepackage{blindtext}
+  % \usepackage{titlesec}
+  % \usepackage[xindy]{glossaries}
+  % \usepackage[normalem]{ulem}
+
+  \usepackage{import}
+  \graphicspath{{pics/}{../pics/}}
+
+
+  % \setlist{noitemsep}
+
+  \setcounter{secnumdepth}{5}
+  \setcounter{tocdepth}{5}
+
+  \usepackage[numbers]{natbib}
+  \bibliographystyle{plainnat}
+
+% defines
+  \definecolor{mygray}{rgb}{0.9,0.9,0.9}
+  \lstset{
+      basicstyle=\ttfamily\footnotesize,
+      tabsize=2,
+      % backgroundcolor=\color{mygray},
+      % numbers=left
+  }
+
+  % %% disable figures
+  % \usepackage{comment}
+  % \excludecomment{figure}
+  % \let\endfigure\relax
+  % %% disable figuress
+  % \newcommand{\done}{\checkmark?}
+  \newcommand{\done}{}
+  % \newcommand{\readonemoretime}{\textsc{r}!}
+  \newcommand{\readonemoretime}{}
+
+  % \newcommand{\TI}{ASILD1 (TI TMS570)\xspace}
+  \newcommand{\TI}{TMS570\xspace}
+  % \newcommand{\ST}{ASILD2 (ST SPC570)\xspace}
+  \newcommand{\ST}{SPC570\xspace}
+  \newcommand{\NXP}{QM target\xspace}
+
+  \newcommand{\unroll}{\texttt{unroll}\xspace}
+  \newcommand{\auth}{\texttt{auth}\xspace}
+  \newcommand{\authone}{\texttt{auth-1}\xspace}
+  \newcommand{\authtwo}{\texttt{auth-2}\xspace}
+  \newcommand{\jtag}{JTAG\xspace}
+
+  \newcommand{\UU}{\textsc{uu}\xspace}
+  \newcommand{\UD}{\textsc{ud}\xspace}
+  \newcommand{\SU}{\textsc{su}\xspace}
+  \newcommand{\SD}{\textsc{sd}\xspace}
+  \newcommand{\R}{\textsc{r}\xspace}
+
+  \newcommand{\Q}{\textsc{q}\xspace}
+  \newcommand{\Qa}{\textsc{q}a\xspace}
+  \newcommand{\Qb}{\textsc{q}b\xspace}
+
+  \newcommand{\errorpin}{\textsc{eout}\xspace}
+  \newcommand{\errorpinzero}{\textsc{eout0}\xspace}
+  \newcommand{\errorpinone}{\textsc{eout1}\xspace}
+
+  % \newcommand{\note}[2]{[#1] \todo{#2} }
+
+  % \renewcommand*{\thesection}{\Roman{section}}
+  % \renewcommand*{\thesubsection}{\thesection.\Alph{subsection}}
+
+  \let\subsectionautorefname\sectionautorefname
+  \let\subsubsectionautorefname\sectionautorefname
+
+
+  % hypenation
+  \hyphenation{lock-step}
+
+  %keyword command
+  \providecommand{\keywords}[1]{\textbf{\textit{Keywords---}}#1}
+
+% titlepage
+  \title{SAFETY $\neq$ SECURITY \\ A SECURITY EVALUATION OF STATE OF THE ART AUTOMOTIVE MICROCONTROLLERS}
+  \author{}
+  \date{}
+
+\begin{document}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll rr rr rr rr}
+    \toprule
+
+      &  & \multicolumn{2}{c}{Widest }     &    
+           \multicolumn{2}{c}{Wide }      &    
+           \multicolumn{2}{c}{Narrow }   &
+           \multicolumn{2}{c}{Single }  \\
+           \cmidrule(lr){3-4}                    
+           \cmidrule(lr){5-6}
+           \cmidrule(lr){7-8}
+           \cmidrule(l){9-10}
+      Experiment & \multicolumn{1}{c}{Category}  & 
+      \multicolumn{1}{c}{Counts}      & \multicolumn{1}{r}{\%}          & 
+      \multicolumn{1}{c}{Counts}      & \multicolumn{1}{r}{\%}          & 
+      \multicolumn{1}{c}{Counts}      & \multicolumn{1}{r}{\%}          & 
+      \multicolumn{1}{c}{Counts}      & \%         \\
+
+    \midrule
+
+    \multicolumn{1}{c}{\multirow{3}{*}{ \parbox{2cm}{\TI power \unroll}}}
+
+    & \UU    
+    & 60048  & 38.26\%                   
+    & &  
+    & &     
+    &  44  &  10.02\%   
+    \\
+    & \R   
+    & 57436  & 36.60\%                   
+    & &  
+    & &     
+    &  10  &  2.277\%   
+    \\
+    & \UD  
+    & 15711  & 10.01\%                   
+    & &  
+    & &     
+    &  0   &  0    \%   
+    \\
+    & \SD     
+    & 22610  & 14.40\%                   
+    & &  
+    & &     
+    &  0   &  0    \%   
+    \\
+    & \SU      
+    & 1107   & 0.705\%                   
+    & &  
+    & &     
+    &  384 &  87.47\%   
+    \\
+
+    \cmidrule(l){2-10}
+    & total    
+    & 156912 &                            
+    & &  
+    & & 
+    &  438 &             
+    \\       
+
+    \midrule
+
+    \multicolumn{1}{c}{\multirow{3}{*}{ \parbox{2cm}{\TI power \auth}}}
+    & \UU    
+    & 33669   & 19.83\%                     
+    &  73543  & 43.82\%                 
+    &  9445  & 82.35\%                 
+    &  3186  & 34.27\%                      
+    \\
+    & \R   
+    & 106323  & 62.62\%                     
+    &  50751  & 30.24\%                 
+    &  521   & 4.542\%                 
+    &  493   & 5.303\%                      
+    \\
+    & \UD  
+    & 26877   & 15.83\%                     
+    &  32265  & 19.22\%                 
+    &  1     & 0.008\%                 
+    &  0     & 0    \%                      
+    \\
+    & \SD     
+    & 2806    & 1.652\%                     
+    &  10049  & 5.988\%                 
+    &  2     & 0.017\%                 
+    &  0     & 0    \%                      
+    \\
+    & \SU      
+    & 94      & 0.055\%                     
+    &  1200   & 0.715\%                 
+    &  1500  & 13.07\%                 
+    &  5616  & 60.41\%                      
+    \\
+
+    \cmidrule(l){2-10}
+    & total    
+    & 169769  &                           
+    &  167808 &                       
+    &  11469 &                       
+    & 9295  &                                 
+    \\
+
+    \midrule
+
+    \multicolumn{1}{c}{\multirow{3}{*}{ \parbox{2cm}{\TI EM \unroll}}}
+
+    & \UU    
+    & 8384   & 99.80\%                   
+    &  188043 & 96.35\%    
+    & & 
+    & &
+    \\
+    & \R   
+    & 13     & 0.154\%                   
+    &  6492   & 3.326\%    
+    & & 
+    & &
+    \\
+    & \UD  
+    & 2      & 0.023\%                   
+    &  203    & 0.104\%    
+    & & 
+    & &
+    \\
+    & \SD     
+    & 0      & 0    \%                   
+    &  0      &  0    \%   
+    & & 
+    & &
+    \\
+    & \SU      
+    & 1      & 0.011\%                   
+    &  427    & 0.218\%    
+    & & 
+    & &
+    \\
+
+    \cmidrule(l){2-10}
+    & total    
+    & 8400   &                            
+    &  195165 &             
+    & & 
+    & &
+    \\   
+
+    \midrule
+
+    \multicolumn{1}{c}{\multirow{3}{*}{ \parbox{2cm}{\TI EM \auth}}}
+
+    & \UU    
+    & & 
+    & & 
+    & 38759  & 90.83\%  
+    & &                            
+    \\
+    & \R   
+    & & 
+    & & 
+    & 3801   & 8.907\%  
+    & &                            
+    \\
+    & \UD  
+    & & 
+    & & 
+    & 28     & 0.065\%  
+    & &                            
+    \\
+    & \SD     
+    & & 
+    & & 
+    & 0      & 0    \%  
+    & &                            
+     \\
+    & \SU      
+    & & 
+    & & 
+    & 82     & 0.192\%  
+    & &                            
+    \\
+
+    \cmidrule(l){2-10}
+    & total    
+    & & 
+    & & 
+    & 8400   &           
+    & &                            
+      \\   
+   
+    \midrule
+
+    \multicolumn{1}{c}{\multirow{3}{*}{ \parbox{2cm}{\ST EM \unroll}}}
+
+    & \UU    
+    & 23118  & 64.20\%
+    & 88412  & 57.73\%  
+    & & 
+    & 2324 & 81.00\%                          
+    \\
+    & \R   
+    & 12871  & 35.74\%
+    & 64153  & 41.89\%  
+    & & 
+    & 0 & 0%                           
+    \\
+    & \SU      
+    & 19     & 0.052\%
+    & 572    & 0.373\%  
+    & & 
+    & 545 & 18.99\%                           
+    \\
+
+    \cmidrule(l){2-10}
+    & total    
+    &  36008  &           
+    & 153137 & 
+    &  & 
+    & 2869&                           
+      \\      
+
+    \midrule
+
+    \multicolumn{1}{c}{\multirow{3}{*}{ \parbox{2cm}{\ST EM \auth}}}
+
+    & \UU    
+    & & 
+    & 97793  & 58.04\%        
+    & 52433   & 28.68\%  
+    & 4821 &   42.06\%        
+    \\
+    & \R   
+    & & 
+    & 70675  & 41.94\%        
+    & 130125  & 71.19\%  
+    & 0 &       0\%    
+    \\
+    & \SU      
+    & & 
+    &  9     & 0.005\%        
+    &  213   & 0.114\%  
+    & 6641   & 57.93\%           
+    \\
+
+    \cmidrule(l){2-10}
+    & total    
+    & & 
+    & 168477  &                 
+    & 182771  &          
+    & 11462&           
+    \\       
+
+
+    \midrule
+
+    \multicolumn{1}{c}{\multirow{3}{*}{ \parbox{2cm}{\NXP \jtag}}}
+
+    & \UU    
+    & 77295  & 87.05 \%               
+    & 38536  & 85.05 \%            
+    & 18185  & 21.97\%              
+    & 2151   & 19.89\%               
+    \\
+    & \R   
+    & 11404  & 12.84 \%               
+    & 5804   & 12.81 \%            
+    & 27874  & 33.68\%              
+    & 0   & 0\%               
+    \\
+    & \SU      
+    & 85     & 0.095 \%               
+    & 965    & 2.130 \%            
+    & 36678  & 44.33\%              
+    & 8660   & 80.10\%               
+    \\
+
+    \cmidrule(l){2-10}
+    & total    
+    & 88784  &                        
+    & 45305  &                     
+    & 82737  &                        
+    & 10811  &                        
+    \\
+
+
+    \midrule
+
+    \multicolumn{1}{c}{\multirow{3}{*}{ \parbox{2cm}{\TI \jtag }}}
+    & \UU    
+    & 132562 & 51.13\%               
+    & 18489   & 40.00\%            
+    & 8321   & 52.48\%       
+    & 28173  & 80.03\%             
+    \\
+    & \R   
+    & 125152     & 48.27\%               
+    & 25122   & 54.36\%            
+    & 3268   & 20.61\%       
+    & 4951   & 14.06\%             
+    \\
+    & \UD  
+    & 1509       &  0.582\%                      
+    & 2513    & 5.437\%            
+    & 3960   & 24.97\%       
+    & 1158   & 3.289\%             
+    \\
+    & \SD     
+    & 2       &  0.0007\%                  
+    & 52      & 0.112\%            
+    & 152    & 0.958\%       
+    & 432    & 1.227\%             
+    \\
+    & \SU      
+    & 1      & 0.0003\%               
+    & 37      & 0.080\%            
+    & 152    & 0.958\%       
+    & 486    & 1.380\%             
+    \\
+
+    \cmidrule(l){2-10}
+    & total    
+    & 259226 &                        
+    & 46213 &                       
+    & 15853 &                 
+    & 35200 &                       
+    \\
+    \bottomrule
+    \end{tabular}
+    \caption{All results of each experiment}
+    \label{tab:all-results}
+  \end{table}
+
+ \end{document}
